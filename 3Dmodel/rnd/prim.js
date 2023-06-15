@@ -43,7 +43,7 @@ export function vert(...args) {
 export function arrayVert(mode, array) {
   let res = [];
   if (mode === false) {
-    for (let i = 0; i < array.length; i += 7) {
+    for (let i = 0; i < array.length / 7; i++) {
       res.push(
         vert(
           array[i],
@@ -57,7 +57,7 @@ export function arrayVert(mode, array) {
       );
     }
   } else {
-    for (let i = 0; i < array.length; i += 10) {
+    for (let i = 0; i < array.length / 10; i++) {
       res.push(
         vert(
           array[i],
@@ -67,9 +67,9 @@ export function arrayVert(mode, array) {
           array[i + 4],
           array[i + 5],
           array[i + 6],
-          0,
-          0,
-          0
+          array[i + 7],
+          array[i + 8],
+          array[i + 9]
         )
       );
     }
@@ -89,26 +89,6 @@ class _prim {
   constructor(gl, V, NumofV, I, shd) {
     this.Trans = mat4().setIdentity();
     if (V != undefined) {
-      let i;
-      V = arrayVert(true, V);
-      for (i = 0; i < I.length; i += 3)
-      {
-        let p0 = vec3(V[I[i]].pos);
-        let p1 = vec3(V[I[i + 1]].pos);
-        let p2 = vec3(V[I[i + 2]].pos);
-        let N = ((p1.sub(p0)).cross(p2.sub(p0))).normalize();
-        console.log(p0, p1, p2);
-        V[I[i]].normal = (vec3(V[I[i]].normal).add(N)).toArray();
-        //console.log(N);
-        V[I[i + 1]].normal = (vec3(V[I[i + 1]].normal).add(N)).toArray();
-        V[I[i + 2]].normal = (vec3(V[I[i + 2]].normal).add(N)).toArray();
-      }
-      for (i = 0; i < V.length; i++)
-      {
-        V[i].normal = (vec3(V[i].normal).normalize()).toArray();
-      }
-      V = VertToArray(V);
-      //console.log(V);
         this.VA = gl.createVertexArray();
         this.VBuf = gl.createBuffer();
 
@@ -141,7 +121,6 @@ class _prim {
     this.NV = NumofV;
     this.shader = shd;
     this.gl = gl;
-
   }
 } // End of 'prim' construction
 export function prim(...args) { // chtoby vezde new ne pisat
