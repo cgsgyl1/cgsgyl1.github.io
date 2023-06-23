@@ -1,0 +1,142 @@
+.hidden {
+  display: none;
+}
+h3 {
+  color:rgb(255, 1, 255);
+  font-family: 'Comic Sans MS';
+}
+h2 {
+  color:rgb(255, 1, 255);
+  font-family: 'Comic Sans MS';
+}
+img {
+    width: 1000px;
+    height: 700px;
+  }
+
+input.button{
+    height:35px;
+    width:200px;
+    color:rgb(255, 1, 255);
+    background:rgba(213, 3, 255, 0.384);
+    font-family: 'Comic Sans MS';
+    border: 3px solid rgba(255, 11, 235, 0.384);
+    border-radius: 10px;
+    font-size:20px;
+}
+
+input.text {
+  width:  250px;
+  height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 3px solid rgba(255, 11, 235, 0.384);
+  font-size:20px;
+  font-family: "Comic Sans MS";
+  background:rgba(213, 3, 255, 0.384);
+  color:rgb(255, 1, 255);
+  border-radius: 10px;
+}
+
+textarea {
+  color:rgb(255, 1, 255);
+  background:rgba(213, 3, 255, 0.384);
+  font-family: 'Comic Sans MS';
+  border: 3px solid rgba(255, 11, 235, 0.384);
+  border-radius: 10px;
+  font-size:20px;
+}
+
+::placeholder {
+  color:rgb(255, 1, 255);
+  font-family: 'Comic Sans MS';
+}
+
+input.anothertext {
+  height: 30px;
+}
+
+div.background {
+
+  position: fixed;
+  
+  top: 0;
+  
+  left: 0;
+  
+  width: 200%;
+  
+  height: 200%;
+  position: absolute;
+  margin: auto;
+  
+  }
+
+  body {
+    background: url(bin/images/Moon.webp); /* Цвет фона и путь к файлу */
+    background-size: cover;
+    padding-left: 40px;
+    padding-top: 35px;
+    padding-bottom:65px;
+   }
+  
+table{
+  margin-left:20px;  
+  top:0px;
+}
+
+   .slider {
+    -webkit-appearance: none;
+    width: 70%;
+    height: 10px;
+    border-radius: 10px;  
+    background: rgba(213, 3, 255, 0.384);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border: 2px solid rgba(255, 11, 235, 0.384);
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 70%; 
+    background: rgb(255, 1, 255);
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 60%;
+    background: rgb(255, 1, 255);
+    cursor: pointer;
+  }
+
+  #okno {
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    padding: 15px;
+    border: 3px solid rgba(0, 178, 223, 0.384);
+    border-radius: 10px;
+    color: rgb(5, 1, 255);
+    background-color: rgba(19, 227, 255, 0.336);
+    display: none;
+  }
+  #okno:target {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;}
+
+    .imgokno {
+      width: 100px;
+      height: 200px;
+    }
+  
